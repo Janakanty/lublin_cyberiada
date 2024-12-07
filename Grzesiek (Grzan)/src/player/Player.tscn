@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbvolvfrpo4m7"]
+
+[ext_resource type="Texture2D" uid="uid://chgbsnquk0siq" path="res://assets/graphics/icon.svg" id="1_0bfu7"]
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_pf4q1"]
+
+[node name="Player" type="Node2D" groups=["player"]]
+script = ExtResource("1_pf4q1")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_0bfu7")
+
+[node name="BombTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="BombMarker" type="Marker2D" parent="."]
+position = Vector2(0, 75)
