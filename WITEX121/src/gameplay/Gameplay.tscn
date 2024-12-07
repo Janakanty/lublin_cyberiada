@@ -8,9 +8,9 @@
 [node name="Levels" type="Node2D" parent="."]
 
 [node name="Level1" parent="Levels" instance=ExtResource("1_bwuws")]
-position = Vector2(-469, -242)
+position = Vector2(-1745, -618)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 324)
 
 [node name="Player" parent="." instance=ExtResource("2_av4ua")]
+position = Vector2(8, -211)
