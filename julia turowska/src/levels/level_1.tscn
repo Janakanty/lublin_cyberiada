@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=3 uid="uid://cf36flpds4iu8"]
+
+[ext_resource type="Texture2D" uid="uid://b56mrcpysmyw6" path="res://assets/space_bckgr.png" id="1_3qtp6"]
+[ext_resource type="PackedScene" uid="uid://rl2trmmn0a6g" path="res://src/enemy/enemy/enemy.tscn" id="2_w27ye"]
+
+[sub_resource type="GDScript" id="GDScript_yeffl"]
+script/source = "extends Node2D
+
+
+@onready var animacja = $AnimationPlayer
+
+func enemy_sequence_start():
+	animacja.play(\"movee\")
+
+func enemy_back():
+	animacja.play(\"move_back\")
+	
+"
+
+[sub_resource type="Animation" id="Animation_8ph0f"]
+resource_name = "movee"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-333, 197), Vector2(395, 197)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"enemy_sequence_start"
+}, {
+"args": [],
+"method": &"enemy_back"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_u1lnu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-333, 197)]
+}
+
+[sub_resource type="Animation" id="Animation_bbxgp"]
+resource_name = "move_back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(395, 197), Vector2(-333, 197)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"enemy_back"
+}, {
+"args": [],
+"method": &"enemy_sequence_start"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ylpep"]
+_data = {
+"RESET": SubResource("Animation_u1lnu"),
+"move_back": SubResource("Animation_bbxgp"),
+"movee": SubResource("Animation_8ph0f")
+}
+
+[node name="Level1" type="Node2D"]
+script = SubResource("GDScript_yeffl")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1002.0
+offset_top = -520.0
+offset_right = 978.0
+offset_bottom = 560.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3qtp6")
+
+[node name="Enemy" parent="." instance=ExtResource("2_w27ye")]
+position = Vector2(-333, 197)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ylpep")
+}
+autoplay = "movee"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

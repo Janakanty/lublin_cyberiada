@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://rl2trmmn0a6g"]
+
+[ext_resource type="Texture2D" uid="uid://ccb2l5m3c4s1x" path="res://assets/patrol.png" id="1_frgq5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6wiu"]
+atlas = ExtResource("1_frgq5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwror"]
+atlas = ExtResource("1_frgq5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rw6j2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6wiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwror")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Node2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_rw6j2")
+autoplay = "default"
+frame_progress = 0.882659
