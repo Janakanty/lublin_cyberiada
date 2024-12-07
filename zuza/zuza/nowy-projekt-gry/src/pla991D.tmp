@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://bufq2d1ricxx4"]
+
+[ext_resource type="Script" path="res://src/player.gd" id="1_u1wjt"]
+[ext_resource type="Texture2D" uid="uid://ubkweykj0jje" path="res://assets/graphics/spaceship_dash.png" id="2_rs5ho"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg355"]
+atlas = ExtResource("2_rs5ho")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckijw"]
+atlas = ExtResource("2_rs5ho")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxlhw"]
+atlas = ExtResource("2_rs5ho")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nafqw"]
+atlas = ExtResource("2_rs5ho")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asth5"]
+atlas = ExtResource("2_rs5ho")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n875n"]
+atlas = ExtResource("2_rs5ho")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2ugv"]
+atlas = ExtResource("2_rs5ho")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb56y"]
+atlas = ExtResource("2_rs5ho")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2e03"]
+atlas = ExtResource("2_rs5ho")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_035hi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg355")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckijw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxlhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nafqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asth5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n875n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2ugv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb56y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2e03")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D" groups=["Player"]]
+script = ExtResource("1_u1wjt")
+
+[node name="Bullets" type="Node2D" parent="."]
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+position = Vector2(10, 6)
+scale = Vector2(1.4375, 1.46875)
+sprite_frames = SubResource("SpriteFrames_035hi")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
