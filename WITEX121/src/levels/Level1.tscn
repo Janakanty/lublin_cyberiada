@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://8qgqjo622c32"]
+
+[ext_resource type="Texture2D" uid="uid://rnbm7oabrpub" path="res://assets/graphics/backgrounds/background.jpg" id="1_ibkib"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -936.0
+offset_top = -80.0
+offset_right = 2256.0
+offset_bottom = 832.0
+scale = Vector2(1.2116, 1.31262)
+texture = ExtResource("1_ibkib")
+stretch_mode = 4
