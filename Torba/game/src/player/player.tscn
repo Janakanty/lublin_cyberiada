@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://dorb8tfe3ntle"]
+
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_l2ew6"]
+[ext_resource type="Texture2D" uid="uid://cf7urp157gedu" path="res://asstes/Graphics/Player/Cat Sprite Sheet.png" id="2_hic8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxrjw"]
+atlas = ExtResource("2_hic8v")
+region = Rect2(2, 8, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chn75"]
+atlas = ExtResource("2_hic8v")
+region = Rect2(34, 8, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbu5f"]
+atlas = ExtResource("2_hic8v")
+region = Rect2(66, 8, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnpow"]
+atlas = ExtResource("2_hic8v")
+region = Rect2(98, 8, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8et7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxrjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chn75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbu5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnpow")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D" groups=["player"]]
+script = ExtResource("1_l2ew6")
+
+[node name="Bullets" type="Node2D" parent="."]
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.99999, -21)
+rotation = -0.00215091
+scale = Vector2(6.8573, 6.8573)
+sprite_frames = SubResource("SpriteFrames_g8et7")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

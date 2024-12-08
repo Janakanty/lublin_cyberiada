@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://de8llxdn216k8"]
+
+[ext_resource type="Texture2D" uid="uid://xj0pjfidkqxs" path="res://asstes/Graphics/Enemy/dog.png" id="1_4d7qo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nepa"]
+atlas = ExtResource("1_4d7qo")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r6v2"]
+atlas = ExtResource("1_4d7qo")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xko8q"]
+atlas = ExtResource("1_4d7qo")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0utk"]
+atlas = ExtResource("1_4d7qo")
+region = Rect2(288, 96, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rf0ma"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nepa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r6v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xko8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0utk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(10, -15)
+scale = Vector2(2.10417, 2.10417)
+sprite_frames = SubResource("SpriteFrames_rf0ma")

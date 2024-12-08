@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://2pjolmwu1g2i"]
+
+[ext_resource type="Texture2D" uid="uid://dgcffvc7xds3i" path="res://asstes/Graphics/Bomb/cow_bomb.png" id="1_cem1t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gsqfo"]
+radius = 45.0
+height = 144.0
+
+[node name="Bomb" type="RigidBody2D" groups=["bullet"]]
+scale = Vector2(0.439602, 0.439602)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.62939e-06, 1)
+scale = Vector2(0.508, 0.508)
+texture = ExtResource("1_cem1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_gsqfo")
