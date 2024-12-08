@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxf570p8ninhl"]
+[gd_scene load_steps=6 format=3 uid="uid://bxf570p8ninhl"]
 
 [ext_resource type="Script" path="res://src/UI/ui.gd" id="1_dh548"]
 [ext_resource type="Texture2D" uid="uid://bwgaau4mu2okk" path="res://assets/graphics/bar_round_gloss_large.svg" id="1_f53rf"]
 [ext_resource type="Texture2D" uid="uid://r16l1gkq1v7n" path="res://assets/graphics/bar_round_gloss_large_Blue.svg" id="2_3sdni"]
 [ext_resource type="Texture2D" uid="uid://b0k34inhbsxpy" path="res://assets/graphics/droplet-svgrepo-com.svg" id="4_2vhmk"]
+[ext_resource type="Script" path="res://src/UI/cpu_particles_2d.gd" id="5_jfgvj"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -30,8 +31,9 @@ texture_progress = ExtResource("2_3sdni")
 metadata/_edit_use_anchors_ = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="HpTextureProgressBar"]
+z_index = 2
 rotation = 1.5708
-amount = 30
+amount = 60
 texture = ExtResource("4_2vhmk")
 emission_shape = 3
 emission_rect_extents = Vector2(1, 1)
@@ -45,6 +47,7 @@ angle_min = -480.0
 angle_max = 305.5
 scale_amount_min = 0.01
 scale_amount_max = 0.05
+script = ExtResource("5_jfgvj")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
