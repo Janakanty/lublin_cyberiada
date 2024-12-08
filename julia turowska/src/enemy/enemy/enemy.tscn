@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://rl2trmmn0a6g"]
+[gd_scene load_steps=6 format=3 uid="uid://rl2trmmn0a6g"]
 
 [ext_resource type="Texture2D" uid="uid://ccb2l5m3c4s1x" path="res://assets/patrol.png" id="1_frgq5"]
+[ext_resource type="Script" path="res://src/enemy/enemy/enemy.gd" id="1_fvbn7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k6wiu"]
 atlas = ExtResource("1_frgq5")
@@ -24,7 +25,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy" type="Node2D"]
+[node name="Enemy" type="Node2D" groups=["enemy"]]
+script = ExtResource("1_fvbn7")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -1.5708
@@ -32,3 +34,10 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_rw6j2")
 autoplay = "default"
 frame_progress = 0.882659
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-1, -73, 18, -50, 19, -34, 46, -34, 70, -10, 71, 58, -72, 59, -72, -10, -49, -34, -22, -34, -22, -52)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

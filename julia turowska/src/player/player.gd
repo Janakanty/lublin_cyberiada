@@ -1,3 +1,4 @@
+class_name Player
 extends Node2D
 
 @onready var bullets = $bullets
@@ -31,3 +32,9 @@ func _process(delta):
 func _on_timer_timeout():
 	var new_bomb = bomb.instantiate()
 	bullets.add_child(new_bomb)
+	
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("enemy"):
+		print("skibidi")
+		get_parent().get_node("GameplayController").actualization_hp()
