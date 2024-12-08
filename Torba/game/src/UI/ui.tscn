@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxuqnyseoxmjp"]
+
+[ext_resource type="Script" path="res://src/UI/ui.gd" id="1_4e7h8"]
+[ext_resource type="Texture2D" uid="uid://bc0pkh46ujuxc" path="res://asstes/Graphics/UI/hp.jpg" id="1_n00ks"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4e7h8")
+
+[node name="HP" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0119792
+anchor_top = 0.0194444
+anchor_right = 0.222917
+anchor_bottom = 0.0537037
+value = 100.0
+rounded = true
+nine_patch_stretch = true
+texture_under = ExtResource("1_n00ks")
+texture_progress = ExtResource("1_n00ks")
+tint_under = Color(0.180005, 0.180005, 0.180005, 1)
+tint_over = Color(0.266575, 0.266575, 0.266575, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 121.0
+offset_right = 262.0
+offset_bottom = 202.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 125.0
+offset_right = 465.0
+offset_bottom = 203.0
+
+[connection signal="value_changed" from="HP" to="." method="_on_hp_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

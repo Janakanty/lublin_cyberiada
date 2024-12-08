@@ -31,53 +31,9 @@ tracks/1/keys = {
 "values": [Vector2(242, 771)]
 }
 
-[sub_resource type="Animation" id="Animation_nhbau"]
-resource_name = "moving_dog_02"
-length = 2.0
-capture_included = true
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Enemy:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.96667),
-"transitions": PackedFloat32Array(0.148651, 0.148651, 0.101532),
-"update": 2,
-"values": [Vector2(209, 174), Vector2(1538, 728), Vector2(209, 174)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Enemy:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 1.96667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0.4, 1, 1), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1.06667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"animation_01"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_2yca8"]
 resource_name = "moving_dog_01"
 length = 2.0
-capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -86,8 +42,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 1.96667),
-"transitions": PackedFloat32Array(0.148651, 0.148651, 0.101532),
-"update": 2,
+"transitions": PackedFloat32Array(0.707107, 0.707107, 0.707107),
+"update": 0,
 "values": [Vector2(209, 174), Vector2(242, 771), Vector2(209, 174)]
 }
 tracks/1/type = "value"
@@ -109,11 +65,53 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(1.86667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"animation_02"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_nhbau"]
+resource_name = "moving_dog_02"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.96667),
+"transitions": PackedFloat32Array(0.420449, 0.420449, 0.420449),
+"update": 0,
+"values": [Vector2(209, 174), Vector2(1538, 728), Vector2(209, 174)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Enemy:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.4, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.93333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animation_01"
 }]
 }
 
