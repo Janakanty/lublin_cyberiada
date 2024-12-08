@@ -1,18 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2rgl4r1vvmex"]
+[gd_scene load_steps=4 format=3 uid="uid://d2rgl4r1vvmex"]
 
 [ext_resource type="Texture2D" uid="uid://ctenmbtgfokby" path="res://assets/graphics/212781.png" id="1_4xycj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iwgby"]
-radius = 25.807
+radius = 12.0416
 
-[node name="Bomb" type="RigidBody2D"]
-position = Vector2(28, 27)
+[sub_resource type="CircleShape2D" id="CircleShape2D_weap1"]
+
+[node name="Bomb" type="RigidBody2D" groups=["bullets"]]
+position = Vector2(20, 20)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-5, 3.8147e-06)
-scale = Vector2(0.09, 0.09)
+position = Vector2(2.49, 0.99)
+scale = Vector2(0.0527734, 0.0547266)
 texture = ExtResource("1_4xycj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -1)
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 3)
 shape = SubResource("CircleShape2D_iwgby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 5)
+shape = SubResource("CircleShape2D_weap1")
