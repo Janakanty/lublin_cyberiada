@@ -16,7 +16,7 @@ func set_hp(value) -> void:
 func if_life() -> bool:
 	if hp <= 0:
 		life = false
-		emit_signal("dead")
+		dead.emit()
 	return life
 
 func _on_button_pressed() -> void:

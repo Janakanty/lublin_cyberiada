@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://djdx8m6y6bk84"]
+
+[ext_resource type="Texture2D" uid="uid://dop31skvlscy2" path="res://icon.svg" id="1_jntxh"]
+
+[sub_resource type="Gradient" id="Gradient_f22el"]
+offsets = PackedFloat32Array(0.0615764, 0.091133, 0.487685, 0.921182)
+colors = PackedColorArray(0.128217, 0.678444, 0.788827, 1, 0.60933, 0.60933, 0.60933, 1, 0.74982, 0.0288222, 0.445302, 1, 1, 0.337255, 1, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+scale = Vector2(1.30364, 0.626104)
+amount = 50
+lifetime = 2.0
+explosiveness = 0.62
+texture = ExtResource("1_jntxh")
+gravity = Vector2(0, -1000)
+angular_velocity_min = -19.03
+angular_velocity_max = 6.34
+orbit_velocity_min = -1.0
+orbit_velocity_max = 1.0
+damping_min = 0.16
+damping_max = 0.16
+angle_min = -114.1
+angle_max = 63.4
+color_initial_ramp = SubResource("Gradient_f22el")
