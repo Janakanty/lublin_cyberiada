@@ -2,7 +2,34 @@
 
 [ext_resource type="Script" path="res://src/levels/level_1.gd" id="1_32i64"]
 [ext_resource type="Texture2D" uid="uid://sxtppqwuocu" path="res://assets/graphics/backgrounds/background.jpg" id="1_ibkib"]
-[ext_resource type="PackedScene" uid="uid://bwmd1itkx1xn4" path="res://src/enemy/enemy.tscn" id="2_f5whg"]
+[ext_resource type="PackedScene" uid="uid://bwmd1itkx1xn4" path="res://src/enemy/Enemy.tscn" id="2_f5whg"]
+
+[sub_resource type="Animation" id="Animation_4qt7c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(347, 299)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Enemy:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_3wk4h"]
 resource_name = "moving"
@@ -30,33 +57,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 0.203063, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_4qt7c"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Enemy:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(347, 299)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Enemy:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_63mah"]

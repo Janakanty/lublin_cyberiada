@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxf570p8ninhl"]
+
+[ext_resource type="Script" path="res://src/UI/ui.gd" id="1_dh548"]
+[ext_resource type="Texture2D" uid="uid://bwgaau4mu2okk" path="res://assets/graphics/bar_round_gloss_large.svg" id="1_f53rf"]
+[ext_resource type="Texture2D" uid="uid://r16l1gkq1v7n" path="res://assets/graphics/bar_round_gloss_large_Blue.svg" id="2_3sdni"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_dh548")
+hp = null
+
+[node name="HpTextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444444
+anchor_right = 0.527778
+anchor_bottom = 0.037037
+grow_horizontal = 2
+value = 50.0
+texture_under = ExtResource("1_f53rf")
+texture_progress = ExtResource("2_3sdni")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+anchor_right = 0.105035
+anchor_bottom = 0.117284
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 10.0
+offset_right = 298.0
+offset_bottom = 59.0
+text = "BUTTON"
