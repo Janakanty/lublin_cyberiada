@@ -1,19 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://2pjolmwu1g2i"]
+[gd_scene load_steps=4 format=3 uid="uid://2pjolmwu1g2i"]
 
 [ext_resource type="Texture2D" uid="uid://dgcffvc7xds3i" path="res://asstes/Graphics/Bomb/cow_bomb.png" id="1_cem1t"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ojwu1"]
+radius = 18.1108
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gsqfo"]
-radius = 45.0
-height = 144.0
+radius = 11.0
+height = 36.0
 
 [node name="Bomb" type="RigidBody2D" groups=["bullet"]]
-scale = Vector2(0.439602, 0.439602)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(7.62939e-06, 1)
-scale = Vector2(0.508, 0.508)
+position = Vector2(-0.4175, -0.125)
+scale = Vector2(0.113, 0.113)
 texture = ExtResource("1_cem1t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_ojwu1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 0)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_gsqfo")

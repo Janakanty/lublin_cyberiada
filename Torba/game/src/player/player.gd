@@ -1,4 +1,5 @@
 extends Node2D
+class_name Player
 
 @onready var bulltes = $Bullets
 
@@ -19,8 +20,21 @@ func _input(event: InputEvent) -> void:
 
 func funkcja():
 	counter += 1
-	print(counter)
+	#print(counter)
 
+func get_dmg():
+	pass
+	
 func _on_timer_timeout() -> void:
 	var new_bomb = bomb.instantiate()
 	bulltes.add_child(new_bomb)
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		print("kolizja z psem")
+		get_parent().get_node("GameplayControler").actulizaton_hp()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy"):
+		print("kolizja z psem")
+		get_parent().get_node("GameplayControler").actulizaton_hp()
