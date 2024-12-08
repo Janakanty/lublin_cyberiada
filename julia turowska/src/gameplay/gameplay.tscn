@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8c4bviuibmga"]
+
+[ext_resource type="PackedScene" uid="uid://cf36flpds4iu8" path="res://src/levels/level_1.tscn" id="1_55l5j"]
+[ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_mmv7h"]
+[ext_resource type="PackedScene" uid="uid://bcobenixr4mld" path="res://src/player/player.tscn" id="2_awot3"]
+[ext_resource type="Script" path="res://src/gameplay/GameplayController.gd" id="2_nbtks"]
+[ext_resource type="PackedScene" uid="uid://dmhqb48cn5fvo" path="res://src/enemy/bomb/bomb.tscn" id="3_4sedt"]
+[ext_resource type="PackedScene" uid="uid://bi3csoxd6sm15" path="res://src/ui/ui.tscn" id="4_sgcgy"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_mmv7h")
+
+[node name="GameplayController" type="Node" parent="."]
+script = ExtResource("2_nbtks")
+
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="Level1" parent="Levels" instance=ExtResource("1_55l5j")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_awot3")]
+position = Vector2(1, -181)
+
+[node name="Bomb" parent="." instance=ExtResource("3_4sedt")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="UI" instance=ExtResource("4_sgcgy")]

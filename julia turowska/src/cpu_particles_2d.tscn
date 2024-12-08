@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dme27w3ry7u6e"]
+
+[ext_resource type="Texture2D" uid="uid://ctext64ex72f4" path="res://assets/flame.png" id="1_ppp3v"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+position = Vector2(5, 5)
+lifetime = 2.0
+explosiveness = 0.09
+randomness = 0.66
+lifetime_randomness = 0.7
+texture = ExtResource("1_ppp3v")
+spread = 180.0
+gravity = Vector2(0, -500)
+initial_velocity_min = 200.0
+initial_velocity_max = 259.2
+angular_velocity_min = 1.0
+angular_velocity_max = 1.0
+scale_amount_min = 15.0
+scale_amount_max = 25.0
